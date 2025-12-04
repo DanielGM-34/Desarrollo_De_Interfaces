@@ -1,0 +1,12 @@
+{
+  "idInventario": "string",
+  "Descripcion": "string",
+  "Productos": [
+    {
+      "_id": "string",
+      "Nombre": "string",
+      "Precio": "double",
+      "Stock": "int"
+    }
+  ]
+}

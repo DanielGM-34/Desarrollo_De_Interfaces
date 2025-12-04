@@ -1,0 +1,118 @@
+
+QWidget {
+    background-color: #f4f6f9;  
+    color: #2c3e50;              
+    font: 14px Arial;
+}
+
+
+QLabel {
+    font: bold 16px "Arial";
+    color: #34495e;             
+    margin-bottom: 12px;
+    background-color: transparent;
+}
+
+
+QLineEdit {
+    border: 2px solid #bdc3c7;
+    border-radius: 6px;
+    padding: 6px;
+    background-color: #ffffff;
+    font: 14px Arial;
+    color: #2c3e50;
+}
+
+QLineEdit:focus {
+    border: 2px solid #3498db;  
+    background-color: #ecf6fd;  
+}
+
+
+QCheckBox {
+    font: 14px Arial;
+    color: #2c3e50;
+}
+
+QCheckBox::indicator {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    border: 2px solid #db470d;
+    background: #ecf0f1;
+}
+QCheckBox::indicator:hover {
+    border: 2px solid #3498db;
+}
+
+QCheckBox::indicator:checked {
+    background: #2ecc71;         
+    border: 2px solid #2ecc71;
+}
+
+QRadioButton {
+    font: 14px Arial;
+    color: #2c3e50;
+}
+
+QRadioButton::indicator {
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    border: 2px solid #05eeff;
+    background: #ecf0f1;
+}
+
+QRadioButton::indicator:hover {
+    border: 2px solid #3498db;
+}
+
+QRadioButton::indicator:checked {
+    background: #3498db;         
+    border: 2px solid #3498db;
+}
+
+
+QComboBox {
+    background-color: #3498db;
+    border: 2px solid #bdc3c7;
+    border-radius: 6px;
+    padding: 4px 8px;
+    font: 14px Arial;
+    color: #ffffff;
+}
+
+QComboBox:hover {
+    border: 2px solid #2ecc71;  
+}
+QComboBox::drop-down {
+    width: 24px;
+    border-left: 1px solid #bdc3c7;
+}
+
+
+QComboBox::down-arrow {
+    background-color: #2980b9;  
+}
+
+
+QComboBox QAbstractItemView {
+    background: #fdfdfdf6;
+    border: 1px solid #cf3b28;
+
+}
+
+
+QPushButton {
+    background-color: #2ecc71;   
+    color: white;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font: bold 14px Arial;
+}
+QPushButton:hover {
+    background-color: #27ae60;   
+}
+QPushButton:pressed {
+    background-color: #1e8449;   
+}

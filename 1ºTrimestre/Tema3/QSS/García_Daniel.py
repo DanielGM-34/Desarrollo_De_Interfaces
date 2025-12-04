@@ -9,7 +9,7 @@ class GimnasioForm(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Formulario Gimnasio")
-        self.setGeometry(200, 200, 400, 400)  # aumentamos altura
+        self.setMinimumSize(800,600)
 
         # Layout principal
         layout = QVBoxLayout()
@@ -71,7 +71,7 @@ class GimnasioForm(QWidget):
 
     def cargar_estilos(self):
         try:
-            with open("apellido1_nombre_estilos_T3.1.qss", "r") as f:
+            with open("García_Daniel_estilos_T3.1.qss", "r") as f:
                 self.setStyleSheet(f.read())
         except Exception as e:
             print("Error cargando estilos:", e)
