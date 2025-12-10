@@ -1,0 +1,45 @@
+QWidget {
+    background-color: #121212;   /* negro/gris muy oscuro */
+    font-family: "Segoe UI";
+    font-size: 14px;
+    color: #f0f0f0;              /* texto claro para contraste */
+}
+
+/* Botones */
+QPushButton {
+    background-color: #1f1f1f;   /* gris oscuro */
+    color: #ffffff;
+    border-radius: 6px;
+    padding: 6px 12px;
+    border: 1px solid #3498db;   /* borde azul */
+}
+QPushButton:hover {
+    background-color: #3498db;   /* azul al pasar ratón */
+}
+QPushButton:pressed {
+    background-color: #2980b9;   /* azul más oscuro al pulsar */
+}
+
+/* Entradas de texto */
+QLineEdit, QTextEdit, QPlainTextEdit {
+    background-color: #1e1e1e;   /* fondo oscuro */
+    color: #ffffff;              /* texto blanco */
+    border: 2px solid #3498db;
+    border-radius: 6px;
+    padding: 4px;
+}
+
+/* CheckBox */
+QCheckBox {
+    color: #f0f0f0;              /* texto claro */
+}
+QCheckBox::indicator {
+    width: 18px;
+    height: 18px;
+    border: 1px solid #7f8c8d;
+    background-color: #1e1e1e;   /* fondo oscuro */
+    border-radius: 3px;
+}
+QCheckBox::indicator:checked {
+    background-color: #2ecc71;   /* verde al marcar */
+}

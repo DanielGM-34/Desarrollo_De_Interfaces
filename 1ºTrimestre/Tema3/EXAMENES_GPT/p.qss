@@ -1,0 +1,110 @@
+/* Estilo base para toda la aplicación */
+QWidget {
+    background-color: #f0f4f8;
+    font-family: "Segoe UI";
+    font-size: 14px;
+    color: #2c3e50;
+}
+
+/* --- Botones --- */
+QPushButton {
+    background-color: #3498db;
+    color: white;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #1abc9c;
+}
+
+QPushButton:pressed {
+    background-color: #2980b9;
+    padding-top: 2px;
+    padding-left: 2px;
+}
+
+QPushButton:disabled {
+    background-color: #bdc3c7;
+    color: #7f8c8d;
+}
+
+/* --- Campos de texto (QLineEdit) --- */
+QLineEdit {
+    background-color: #ffffff;
+    border: 2px solid #3498db;
+    border-radius: 6px;
+    padding: 6px;
+    font-size: 14px;
+}
+
+QLineEdit:focus {
+    border: 2px solid #1abc9c;
+    background-color: #ecf6fb;
+}
+
+/* --- Área de texto (QTextEdit) --- */
+QTextEdit {
+    background-color: #ffffff;
+    border: 2px solid #3498db;
+    border-radius: 6px;
+    padding: 6px;
+    font-size: 14px;
+}
+
+QTextEdit:focus {
+    border: 2px solid #1abc9c;
+    background-color: #ecf6fb;
+}
+
+/* --- Checkbox estilo interruptor --- */
+QCheckBox {
+    spacing: 8px;
+    font-size: 14px;
+}
+
+QCheckBox::indicator {
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #bdc3c7;
+}
+
+QCheckBox::indicator:checked {
+    background-color: #2ecc71;
+}
+
+QCheckBox::indicator:unchecked {
+    background-color: #e74c3c;
+}
+
+/* --- ComboBox --- */
+QComboBox {
+    background-color: #ffffff;
+    border: 2px solid #3498db;
+    border-radius: 6px;
+    padding: 6px;
+}
+
+QComboBox:hover {
+    background-color: #ecf6fb;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 25px;
+    border-left: 1px solid #3498db;
+}
+
+QComboBox::down-arrow {
+    image: url("down_arrow.png"); /* opcional: icono personalizado */
+}
+
+/* --- Etiquetas --- */
+QLabel {
+    font-size: 16px;
+    padding: 6px;
+    color: #34495e;
+}
