@@ -1,0 +1,76 @@
+/* --- ESTILOS GENERALES --- */
+QWidget {
+    font-family: "Segoe UI", sans-serif;
+    font-size: 14px;
+    background-color: #f4f4f4;
+}
+
+/* --- PESTAÑAS (QTabWidget) --- */
+QTabWidget::pane {
+    border: 1px solid #ccc;
+    background: white;
+    top: -1px; 
+}
+
+QTabBar::tab {
+    background: #e1e1e1;
+    border: 1px solid #C4C4C3;
+    padding: 8px 20px;
+    margin-right: 2px;
+}
+
+QTabBar::tab:selected {
+    background: white;
+    border-bottom-color: white; /* Para que se funda con el panel */
+    font-weight: bold;
+}
+
+/* --- FORMULARIO (QLineEdit) --- */
+QLineEdit {
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: 5px;
+    background-color: #ffffff;
+}
+
+/* REQUISITO: Cambiar de color al escribir (Foco) */
+QLineEdit:focus {
+    border: 2px solid #3498db; /* Borde Azul */
+    background-color: #eaf2f8; /* Fondo azul muy clarito */
+}
+
+/* --- BOTONES ESPECÍFICOS (Usando ID) --- */
+
+/* Botón ENVIAR (Verde) */
+QPushButton#btnEnviar {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-weight: bold;
+}
+QPushButton#btnEnviar:hover {
+    background-color: #27ae60; /* Verde más oscuro al pasar ratón */
+}
+QPushButton#btnEnviar:pressed {
+    background-color: #1e8449;
+    padding-top: 10px;
+}
+
+/* Botón BORRAR (Rojo) */
+QPushButton#btnBorrar {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-weight: bold;
+}
+QPushButton#btnBorrar:hover {
+    background-color: #c0392b; /* Rojo más oscuro al pasar ratón */
+}
+QPushButton#btnBorrar:pressed {
+    background-color: #922b21;
+    padding-top: 10px;
+}

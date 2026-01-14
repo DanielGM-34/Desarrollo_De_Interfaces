@@ -1,0 +1,82 @@
+/* --- FONDO GENERAL --- */
+QMainWindow, QWidget {
+    background-color: #ffffff;
+    font-family: "Verdana", sans-serif;
+    color: #2d3436;
+    font-size: 14px;
+}
+
+/* --- GRUPOS --- */
+QGroupBox {
+    font-weight: bold;
+    border: 2px solid #dfe6e9;
+    border-radius: 8px;
+    margin-top: 20px;
+    padding-top: 15px;
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 10px;
+    color: #6c5ce7; /* Morado sport */
+    background-color: white;
+    padding: 0 5px;
+}
+
+/* --- INPUT OBJETIVO --- */
+QSpinBox {
+    border: 2px solid #b2bec3;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #6c5ce7;
+}
+
+/* --- RADIO BUTTONS (Estilo Botón) --- */
+QRadioButton {
+    spacing: 8px;
+    font-weight: bold;
+}
+QRadioButton::indicator {
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    border: 2px solid #b2bec3;
+    background: white;
+}
+QRadioButton::indicator:checked {
+    background-color: #fd79a8; /* Rosa chicle */
+    border-color: #e84393;
+}
+
+/* --- BOTONES DE ACCIÓN --- */
+QPushButton {
+    border-radius: 20px; /* Muy redondos */
+    padding: 10px 20px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    font-size: 14px;
+}
+
+/* Botón SUMAR PASOS (Verde) */
+QPushButton#btnAndar {
+    background-color: #00b894;
+    border-bottom: 4px solid #008f72; /* Efecto 3D simple */
+}
+QPushButton#btnAndar:pressed {
+    background-color: #00997b;
+    border-bottom: 0px; /* Al pulsar se hunde */
+    margin-top: 4px;
+}
+
+/* Botón RESET (Gris) */
+QPushButton#btnReset {
+    background-color: #636e72;
+    border-bottom: 4px solid #2d3436;
+}
+QPushButton#btnReset:pressed {
+    margin-top: 4px;
+    border-bottom: 0px;
+}

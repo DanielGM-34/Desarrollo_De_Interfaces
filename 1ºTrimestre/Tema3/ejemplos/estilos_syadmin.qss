@@ -1,0 +1,149 @@
+/* --- 1. FONDO GENERAL --- */
+QMainWindow, QWidget#Central {
+    background-color: #f0f8ff; /* Azul Alicia */
+}
+
+QWidget {
+    font-family: "Segoe UI", sans-serif;
+    font-size: 13px;
+    color: #2d3436;
+}
+
+/* --- 2. PESTAÑAS --- */
+QTabWidget::pane {
+    border: 3px solid #6c5ce7;
+    background: #ffffff;
+    border-radius: 8px;
+    margin-top: -2px;
+}
+
+QTabBar::tab {
+    background: #dfe6e9;
+    color: #636e72;
+    padding: 10px 25px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    margin-right: 4px;
+    border: 2px solid #b2bec3;
+    border-bottom: none;
+    font-weight: bold;
+}
+
+QTabBar::tab:selected {
+    background-color: #a29bfe; /* Morado claro sólido */
+    color: white;
+    border: 2px solid #6c5ce7;
+    border-bottom: none;
+}
+
+/* --- 3. GRUPOS --- */
+QGroupBox {
+    font-weight: bold;
+    border: 2px solid #0984e3;
+    border-radius: 10px;
+    margin-top: 25px;
+    background-color: #ffffff;
+    padding-top: 20px; 
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top center;
+    padding: 5px 15px;
+    background-color: #0984e3;
+    color: white;
+    border-radius: 5px;
+}
+
+/* --- 4. INPUTS --- */
+QLineEdit, QComboBox, QSpinBox {
+    background: #ffffff;
+    border: 2px solid #b2bec3;
+    border-radius: 6px;
+    padding: 6px;
+    color: #2d3436;
+    font-weight: bold;
+}
+
+QLineEdit:focus, QSpinBox:focus {
+    border: 3px solid #fdcb6e; /* Naranja */
+    background-color: #fffce7;
+}
+
+QLineEdit[estado="ok"] {
+    border: 3px solid #00b894; /* Verde */
+    background-color: #dcffe4;
+}
+QLineEdit[estado="error"] {
+    border: 3px solid #d63031; /* Rojo */
+    background-color: #ffcccc;
+}
+
+/* --- 5. LISTA --- */
+QListWidget {
+    background-color: #f1f2f6;
+    border: 2px solid #636e72;
+    border-radius: 8px;
+}
+QListWidget::item:selected {
+    background-color: #74b9ff;
+    color: white;
+}
+
+/* --- 6. BOTONES (CORREGIDO) --- */
+
+/* Estilo BASE para TODOS los botones (Seguridad) */
+QPushButton {
+    background-color: #636e72; /* Gris oscuro por defecto */
+    color: white;              /* Texto blanco */
+    border: 2px solid #2d3436;
+    padding: 10px 20px;
+    border-radius: 15px;       /* Muy redondeados */
+    font-weight: bold;
+    min-width: 80px;           /* Ancho mínimo para que no desaparezcan */
+}
+
+QPushButton:hover {
+    background-color: #b2bec3;
+    color: black;
+}
+
+/* Botón AZUL (Conectar) */
+QPushButton#btnAzul {
+    background-color: #0984e3; /* Azul fuerte */
+    border-color: #06528f;
+}
+QPushButton#btnAzul:hover {
+    background-color: #74b9ff; /* Azul claro */
+}
+
+/* Botón ROJO (Cancelar/Detener) */
+QPushButton#btnRojo {
+    background-color: #d63031; /* Rojo fuerte */
+    border-color: #851e1f;
+}
+QPushButton#btnRojo:hover {
+    background-color: #ff7675; /* Rojo claro */
+}
+
+/* Botón VERDE (Acción Positiva) */
+QPushButton#btnVerde {
+    background-color: #00b894; /* Verde esmeralda */
+    border-color: #006e58;
+}
+QPushButton#btnVerde:hover {
+    background-color: #55efc4; /* Verde claro */
+    color: #2d3436;
+}
+
+/* --- 7. BARRA DE PROGRESO --- */
+QProgressBar {
+    border: 2px solid #636e72;
+    border-radius: 8px;
+    text-align: center;
+    background: white;
+    color: black;
+    height: 25px;
+}
+QProgressBar::chunk {
+    background-color: #fdcb6e; /* Naranja */
+}

@@ -7,8 +7,6 @@ from PySide6.QtWidgets import (
     QTabWidget, QGroupBox, QFormLayout, QDateEdit, QTimeEdit
 )
 from PySide6.QtCore import Signal
-
-
 # --- CampoTexto con señales personalizadas ---
 class CampoTexto(QLineEdit):
     texto_valido = Signal(str)

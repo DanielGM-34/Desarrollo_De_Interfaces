@@ -1,0 +1,51 @@
+/* --- ESTILOS BASE (Lo que ya tienes en rojo/verde) --- */
+QWidget {
+    font-family: "Segoe UI", sans-serif;
+    font-size: 14px;
+    background-color: #f0f0f0;
+}
+
+QLineEdit {
+    border: 1px solid #27ae60; /* Borde VERDE como en tu foto */
+    border-radius: 4px;
+    padding: 6px;
+    background-color: white;
+}
+
+QPushButton {
+    background-color: #e74c3c; /* Fondo ROJO como en tu foto */
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    padding: 8px;
+    border: none;
+}
+
+QPushButton:hover {
+    background-color: #c0392b; /* Rojo más oscuro */
+}
+
+QPushButton:disabled {
+    background-color: #95a5a6; /* Gris cuando está deshabilitado */
+}
+
+/* --- 🟢 AQUÍ ESTÁ EL TRUCO PARA EL CAMBIO --- */
+
+/* 1. Estado inicial de la etiqueta de resultado */
+QLabel#LabelResultado {
+    background-color: #ecf0f1;
+    border: 1px solid #bdc3c7;
+    color: #7f8c8d; /* Gris apagado */
+    padding: 15px;
+    border-radius: 4px;
+    font-style: italic;
+}
+
+/* 2. Estado cuando hemos pulsado el botón (estado="activo") */
+QLabel#LabelResultado[estado="activo"] {
+    background-color: #dbfabb; /* Fondo verdoso suave */
+    border: 2px solid #27ae60;
+    color: #2c3e50; /* Azul oscuro */
+    font-weight: bold;
+    font-style: normal;
+}

@@ -1,0 +1,147 @@
+/* --- 1. CONFIGURACIÓN GENERAL (TEMA CLARO) --- */
+QMainWindow, QWidget {
+    background-color: #f4f6f9; /* Gris muy clarito, casi blanco */
+    font-family: "Segoe UI", "Arial", sans-serif;
+    font-size: 14px;
+    color: #2c3e50; /* Texto gris oscuro, no negro puro para no cansar */
+}
+
+/* --- 2. MENÚS Y BARRAS --- */
+QMenuBar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #dcdcdc;
+}
+QMenuBar::item:selected {
+    background-color: #e6f7ff; /* Azul muy pálido al pasar ratón */
+    color: #0056b3;
+}
+
+QToolBar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #dcdcdc;
+    padding: 5px;
+    spacing: 10px;
+}
+QToolBar QToolButton {
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 4px;
+}
+QToolBar QToolButton:hover {
+    background-color: #e6f7ff;
+    border: 1px solid #b3d7ff;
+}
+
+/* --- 3. CONTENEDORES Y GRUPOS --- */
+QGroupBox {
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    margin-top: 20px; /* Dejar sitio para el título */
+    background-color: #ffffff;
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    padding: 0 5px;
+    color: #0056b3; /* Título en azul */
+    font-weight: bold;
+}
+
+/* --- 4. ENTRADAS DE TEXTO (Input y Bloc de Notas) --- */
+QLineEdit, QTextEdit, QComboBox, QSpinBox {
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 6px;
+    selection-background-color: #007bff;
+}
+
+/* Efecto al hacer clic para escribir (Focus) */
+QLineEdit:focus, QTextEdit:focus, QComboBox:focus {
+    border: 2px solid #80bdff; /* Borde azul brillante */
+    background-color: #ffffff;
+}
+
+/* Validación visual (usando propiedad dinámica) */
+QLineEdit[valido="true"] {
+    border: 2px solid #28a745; /* Verde si está relleno */
+    background-color: #f0fff4;
+}
+
+/* --- 5. RADIO BUTTONS Y CHECKBOX --- */
+QRadioButton {
+    spacing: 8px;
+}
+QRadioButton::indicator {
+    width: 16px;
+    height: 16px;
+    border-radius: 9px;
+    border: 1px solid #6c757d;
+    background-color: white;
+}
+QRadioButton::indicator:checked {
+    background-color: #007bff; /* Azul al marcar */
+    border: 2px solid #007bff;
+}
+
+QCheckBox {
+    spacing: 8px;
+}
+QCheckBox::indicator {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    border: 1px solid #6c757d;
+    background-color: white;
+}
+QCheckBox::indicator:checked {
+    background-color: #6610f2; /* Morado al marcar */
+    border: 1px solid #6610f2;
+}
+
+/* --- 6. BOTONES DE ACCIÓN (La parte importante) --- */
+QPushButton {
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+    color: white;
+}
+
+/* Botón ENVIAR (Verde) */
+QPushButton#btnEnviar {
+    background-color: #28a745; /* Verde Bootstrap */
+}
+QPushButton#btnEnviar:hover {
+    background-color: #218838; /* Verde más oscuro */
+}
+QPushButton#btnEnviar:pressed {
+    background-color: #1e7e34;
+    padding-top: 10px; /* Efecto hundir */
+}
+/* Estado Deshabilitado (Gris) */
+QPushButton#btnEnviar:disabled {
+    background-color: #6c757d;
+    opacity: 0.6;
+}
+
+/* Botón BORRAR (Rojo) */
+QPushButton#btnBorrar {
+    background-color: #dc3545; /* Rojo Bootstrap */
+}
+QPushButton#btnBorrar:hover {
+    background-color: #c82333;
+}
+QPushButton#btnBorrar:pressed {
+    background-color: #bd2130;
+    padding-top: 10px;
+}
+
+/* Botón SALIR (Gris oscuro) */
+QPushButton#btnSalir {
+    background-color: #343a40;
+}
+QPushButton#btnSalir:hover {
+    background-color: #23272b;
+}

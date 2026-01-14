@@ -1,0 +1,136 @@
+/* --- 1. FONDO GENERAL --- */
+QMainWindow {
+    background-color: #2b2b2b; /* Gris oscuro "espacial" */
+}
+
+QWidget {
+    font-family: "Segoe UI", "Verdana";
+    font-size: 14px;
+    color: #ecf0f1; /* Texto casi blanco */
+}
+
+/* --- 2. BARRA DE HERRAMIENTAS Y MENÚ --- */
+QMenuBar {
+    background-color: #1e1e1e;
+    color: white;
+}
+QMenuBar::item:selected {
+    background-color: #3498db;
+}
+
+QToolBar {
+    background-color: #1e1e1e;
+    border-bottom: 2px solid #3498db;
+    spacing: 10px;
+}
+
+QToolBar QToolButton {
+    background-color: #34495e;
+    color: white;
+    border-radius: 4px;
+    padding: 5px;
+    font-weight: bold;
+}
+QToolBar QToolButton:hover {
+    background-color: #3498db;
+}
+
+/* --- 3. BOTONES DE ACCIÓN --- */
+QPushButton {
+    background-color: #444; /* Fondo por defecto para botones normales (como los del MessageBox) */
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    border: 1px solid #555;
+    min-width: 80px; /* Para que los botones de "Aceptar" no sean enanos */
+}
+QPushButton:hover {
+    background-color: #555;
+    border-color: #777;
+}
+QPushButton:pressed {
+    background-color: #3498db;
+}
+
+/* BOTÓN EJECUTAR (VERDE) */
+QPushButton#btnEjecutar {
+    background-color: #27ae60;
+    border: none;
+}
+QPushButton#btnEjecutar:hover {
+    background-color: #2ecc71;
+}
+QPushButton#btnEjecutar:pressed {
+    background-color: #1e8449;
+    padding-top: 12px;
+}
+QPushButton#btnEjecutar:disabled {
+    background-color: #4a5a50;
+    color: #aaa;
+}
+
+/* BOTÓN BORRAR (ROJO) */
+QPushButton#btnBorrar {
+    background-color: #c0392b;
+    border: none;
+}
+QPushButton#btnBorrar:hover {
+    background-color: #e74c3c;
+}
+QPushButton#btnBorrar:pressed {
+    background-color: #922b21;
+}
+
+/* --- 4. COMPONENTE DERIVADO (Input) --- */
+QLineEdit#InputComando {
+    background-color: #1a1a1a;
+    border: 2px solid #555;
+    border-radius: 4px;
+    padding: 6px;
+    color: white;
+    font-family: "Consolas";
+}
+
+QLineEdit#InputComando[valido="true"] {
+    border: 2px solid #2ecc71;
+    background-color: #192920;
+}
+QLineEdit#InputComando[valido="false"] {
+    border: 2px solid #e74c3c;
+    background-color: #291a1a;
+}
+
+/* --- 5. PESTAÑAS --- */
+QTabWidget::pane {
+    border: 1px solid #444;
+    background: #333;
+}
+QTabBar::tab {
+    background: #222;
+    padding: 10px 20px;
+    margin-right: 2px;
+}
+QTabBar::tab:selected {
+    background: #444;
+    border-bottom: 2px solid #27ae60;
+    color: white;
+}
+
+/* --- 6. VENTANAS EMERGENTES (LO NUEVO) --- */
+/* Esto arregla que el mensaje se vea claro/blanco */
+
+QMessageBox {
+    background-color: #2b2b2b; /* Fondo oscuro igual que la ventana */
+}
+
+QMessageBox QLabel {
+    color: white; /* Asegurar que el texto del mensaje es blanco */
+    font-size: 14px;
+}
+
+/* Si quieres estilizar también los diálogos de color */
+QColorDialog {
+    background-color: #2b2b2b;
+    color: white;
+}

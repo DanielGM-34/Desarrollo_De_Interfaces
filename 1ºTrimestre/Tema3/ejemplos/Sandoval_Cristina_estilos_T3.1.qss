@@ -1,0 +1,79 @@
+/* EJERCICIO QSS 1: Panel de Búsqueda Dinámica */
+
+/* Estilo universal base */
+* {
+    font-family: "Verdana", sans-serif;
+    font-size: 13px;
+}
+
+/* --- ESTILOS QLINEEDIT (Campo de Búsqueda) --- */
+QLineEdit {
+    border: 1px solid #bdc3c7; 
+    border-radius: 5px;
+    padding: 7px; /* padding interno [cite: 550] */
+    background-color: white;
+}
+
+/* Resaltar al obtener el foco (:focus) [cite: 71] */
+QLineEdit:focus {
+    border: 2px solid #3498db; /* Borde azul suave al hacer focus */
+    background-color: #ecf6fb;
+}
+
+/* --- ESTILOS QPUSHBUTTON --- */
+QPushButton {
+    background-color: #e74c3c; /* Rojo por defecto */
+    color: white;
+    border: none;
+    border-radius: 8px; /* Esquinas redondeadas  */
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #c0392b; /* Rojo más oscuro al pasar el ratón [cite: 61] */
+}
+
+/* Efecto de Hundimiento (:pressed)  */
+QPushButton:pressed {
+    background-color: #2c3e50;
+    padding-top: 12px; /* Aumenta el padding superior */
+    padding-bottom: 8px; /* Disminuye el padding inferior */
+}
+
+/* Estado Deshabilitado (:disabled) [cite: 63] */
+QPushButton:disabled {
+    background-color: #95a5a6; /* Fondo gris [cite: 998] */
+    color: #34495e; /* Texto gris más oscuro [cite: 1000] */
+    border: 1px solid #7f8c8d;
+}
+
+/* --- ESTILOS QCOMBOBOX (Selector de Categoría) --- */
+QComboBox {
+    border: 1px solid #2ecc71; /* Borde verde */
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #f0fff0; /* Fondo verde suave */
+    min-height: 25px; 
+}
+
+QComboBox:hover {
+    background-color: #d1ffd1;
+}
+
+/* Personalizar el área del menú desplegable (drop-down)  */
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: center right;
+    width: 25px;
+    border-left: 1px solid #2ecc71; 
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/* Personalizar la flecha (down-arrow) [cite: 90] */
+QComboBox::down-arrow {
+    image: url(flecha_abajo.png); /* Deberías usar una imagen o SVG aquí */
+    width: 10px;
+    height: 10px;
+}

@@ -42,7 +42,7 @@ class ContadorSimple(QWidget):
     def valor(self):
         return self.__valor
 
-    def reiniciar(self):
+    def reiniciar(self): 
         self.__valor = 0
         self.__etiqueta.setText("0")
 

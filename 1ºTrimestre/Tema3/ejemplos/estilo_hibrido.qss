@@ -1,0 +1,41 @@
+/* --- FONDO GENERAL --- */
+QMainWindow, QWidget {
+    background-color: #222; /* Fondo oscuro */
+    font-family: "Arial Black", sans-serif;
+}
+
+/* --- ETIQUETA DE TEXTO --- */
+QLabel {
+    color: #eee;
+    font-size: 16px;
+}
+
+/* --- BOTONES REDONDOS (NEÓN) --- */
+QPushButton {
+    background-color: #333;
+    color: white;
+    border: 2px solid #555;
+    border-radius: 25px; /* Redondos (si son 50x50) */
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Botón SUBIR (Azul Neón) */
+QPushButton#btnSubir {
+    border-color: #00f2ff;
+    color: #00f2ff;
+}
+QPushButton#btnSubir:pressed {
+    background-color: #00f2ff;
+    color: black;
+}
+
+/* Botón BAJAR (Rosa Neón) */
+QPushButton#btnBajar {
+    border-color: #ff00ff;
+    color: #ff00ff;
+}
+QPushButton#btnBajar:pressed {
+    background-color: #ff00ff;
+    color: black;
+}

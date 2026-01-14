@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Prueba XRP</title>
+</head>
+<body>
+  <h1>Prueba XRP Ledger Testnet</h1>
+  <button id="btn">Enviar 1 XRP</button>
+  <pre id="log"></pre>
+
+  <!-- Cargar xrpl.js correctamente -->
+  <script src="https://unpkg.com/xrpl/dist/xrpl-latest-min.js"></script>
+
+  <script>
+    const log = (t) => document.getElementById("log").textContent += t + "\n"
+
+    document.getElementById("btn").onclick = async () => {
+      log("Conectando...")
+
+      const client = new xrpl.Client("wss://s.altnet.rippletest.net:51233")
+      await client.connect()
+      log("Conectado a Testnet")
+
+      // Crear wallet de prueba
+      const { wallet } = await client.fundWallet()
+      log("Cuenta origen: " + wallet.address)
+
+      // Dirección destino de ejemplo
+      const destino = "rPT1Sjq2YGrBMTttX4GZHjKu9dyfzbpAYe"
+
+      // Crear transacción
+      const tx = {
+        TransactionType: "Payment",
+        Account: wallet.address,
+        Amount: xrpl.xrpToDrops("1"),
+        Destination: destino
+      }
+
+      const prepared = await client.autofill(tx)
+      const signed = wallet.sign(prepared)
+      const result = await client.submitAndWait(signed.tx_blob)
+
+      log("Resultado: " + result.result.meta.TransactionResult)
+      log("Hash: " + result.result.tx_json.hash)
+
+      client.disconnect()
+    }
+  </script>
+</body>
+</html>

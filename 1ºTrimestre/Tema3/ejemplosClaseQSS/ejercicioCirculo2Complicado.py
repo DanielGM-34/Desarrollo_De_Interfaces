@@ -47,8 +47,6 @@ class IndicadorSimple(QWidget):
             lado,                         # ancho del cuadrado
             lado                          # alto del cuadrado
         ) 
-
-    
         # Dibujamos el círculo dentro del rectángulo calculado.
         painter.drawEllipse(recto)
 

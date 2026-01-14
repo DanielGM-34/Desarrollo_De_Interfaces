@@ -1,0 +1,80 @@
+/* --- TEMA MATRIX / HACKER --- */
+
+/* 1. Fondo General */
+QMainWindow, QWidget {
+    background-color: #0d0d0d; /* Negro casi puro */
+    font-family: "Consolas", "Courier New", monospace;
+    color: #00ff41; /* Verde fósforo */
+    font-size: 14px;
+}
+
+/* 2. Pestañas */
+QTabWidget::pane {
+    border: 2px solid #00ff41;
+    background: #000;
+}
+QTabBar::tab {
+    background: #1a1a1a;
+    color: #008f11;
+    border: 1px solid #008f11;
+    padding: 8px 20px;
+    margin-right: 2px;
+}
+QTabBar::tab:selected {
+    background: #003300; /* Verde muy oscuro */
+    color: #00ff41;
+    border-bottom: none;
+    font-weight: bold;
+}
+
+/* 3. Botones */
+QPushButton {
+    background-color: #000;
+    border: 2px solid #00ff41;
+    color: #00ff41;
+    padding: 8px 16px;
+    font-weight: bold;
+    border-radius: 0px; /* Cuadrados, estilo retro */
+}
+QPushButton:hover {
+    background-color: #00ff41;
+    color: black; /* Invertimos colores al pasar ratón */
+}
+QPushButton:pressed {
+    background-color: #008f11;
+    color: black;
+}
+/* Botón especial PELIGRO */
+QPushButton#btnStress {
+    border-color: #ff0000;
+    color: #ff0000;
+}
+QPushButton#btnStress:hover {
+    background-color: #ff0000;
+    color: white;
+}
+
+/* 4. Tablas (QTableWidget) */
+QTableWidget {
+    gridline-color: #008f11;
+    border: 1px solid #00ff41;
+    background-color: #050505;
+}
+QHeaderView::section {
+    background-color: #002200;
+    color: #00ff41;
+    border: 1px solid #00ff41;
+    padding: 4px;
+}
+QTableWidget::item:selected {
+    background-color: #00ff41;
+    color: black;
+}
+
+/* 5. Inputs */
+QSpinBox, QComboBox {
+    background-color: #000;
+    border: 1px solid #00ff41;
+    color: #00ff41;
+    padding: 4px;
+}

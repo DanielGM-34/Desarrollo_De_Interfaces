@@ -1,0 +1,114 @@
+/* --- 1. TEMA CLARO GENERAL --- */
+QMainWindow, QWidget {
+    background-color: #f8f9fa; /* Blanco humo */
+    font-family: "Segoe UI", sans-serif;
+    color: #343a40;
+    font-size: 14px;
+}
+
+/* --- 2. GRUPOS Y PANELES --- */
+QGroupBox {
+    font-weight: bold;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    margin-top: 20px;
+    background-color: #ffffff; /* Fondo blanco puro */
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 5px;
+    color: #0d6efd; /* Azul corporativo */
+}
+
+/* --- 3. INPUTS (Texto, Fechas, Spinbox) --- */
+QLineEdit, QTextEdit, QDateEdit, QSpinBox, QComboBox {
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+QLineEdit:focus, QTextEdit:focus {
+    border: 2px solid #0d6efd; /* Azul al escribir */
+}
+
+/* Validación Correcta (Verde) */
+QLineEdit[estado="ok"] {
+    border: 2px solid #198754;
+    background-color: #e8f5e9;
+}
+/* Validación Error (Rojo) */
+QLineEdit[estado="error"] {
+    border: 2px solid #dc3545;
+    background-color: #f8d7da;
+}
+
+/* --- 4. BARRA DE PROGRESO --- */
+QProgressBar {
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    text-align: center;
+    background-color: white;
+}
+QProgressBar::chunk {
+    background-color: #0d6efd; /* Relleno azul */
+    width: 20px;
+}
+
+/* --- 5. SLIDERS Y DIALES --- */
+QSlider::groove:horizontal {
+    border: 1px solid #bbb;
+    background: white;
+    height: 8px;
+    border-radius: 4px;
+}
+QSlider::handle:horizontal {
+    background: #0d6efd;
+    border: 1px solid #0d6efd;
+    width: 18px;
+    margin: -5px 0;
+    border-radius: 9px;
+}
+
+/* --- 6. BOTONES DE ACCIÓN --- */
+QPushButton {
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    border: none;
+    color: white;
+}
+
+/* Botón CONFIRMAR (Azul) */
+QPushButton#btnConfirmar {
+    background-color: #0d6efd;
+}
+QPushButton#btnConfirmar:hover {
+    background-color: #0b5ed7;
+}
+QPushButton#btnConfirmar:pressed {
+    background-color: #0a58ca;
+    padding-top: 13px;
+}
+/* Deshabilitado */
+QPushButton#btnConfirmar:disabled {
+    background-color: #b6d4fe;
+    color: #fff;
+}
+
+/* Botón LIMPIAR (Naranja) */
+QPushButton#btnLimpiar {
+    background-color: #fd7e14;
+}
+QPushButton#btnLimpiar:hover {
+    background-color: #e67010;
+}
+
+/* Botón SALIR (Gris) */
+QPushButton#btnSalir {
+    background-color: #6c757d;
+}
+QPushButton#btnSalir:hover {
+    background-color: #5c636a;
+}
