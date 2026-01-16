@@ -1,51 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Prueba XRP</title>
+  <title>Envío XRP Testnet</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    #log { background: #111; color: #0f0; padding: 10px; height: 300px; overflow-y: auto; }
+    button { padding: 10px 20px; font-size: 16px; }
+    a { color: #4af; }
+  </style>
 </head>
 <body>
+
   <h1>Prueba XRP Ledger Testnet</h1>
-  <button id="btn">Enviar 1 XRP</button>
+  <button id="btnEnviar">Enviar 1 XRP</button>
   <pre id="log"></pre>
 
-  <!-- Cargar xrpl.js correctamente -->
-  <script src="https://unpkg.com/xrpl/dist/xrpl-latest-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xrpl/2.12.0/xrpl.min.js"></script>
 
   <script>
-    const log = (t) => document.getElementById("log").textContent += t + "\n"
-
-    document.getElementById("btn").onclick = async () => {
-      log("Conectando...")
-
-      const client = new xrpl.Client("wss://s.altnet.rippletest.net:51233")
-      await client.connect()
-      log("Conectado a Testnet")
-
-      // Crear wallet de prueba
-      const { wallet } = await client.fundWallet()
-      log("Cuenta origen: " + wallet.address)
-
-      // Dirección destino de ejemplo
-      const destino = "rPT1Sjq2YGrBMTttX4GZHjKu9dyfzbpAYe"
-
-      // Crear transacción
-      const tx = {
-        TransactionType: "Payment",
-        Account: wallet.address,
-        Amount: xrpl.xrpToDrops("1"),
-        Destination: destino
-      }
-
-      const prepared = await client.autofill(tx)
-      const signed = wallet.sign(prepared)
-      const result = await client.submitAndWait(signed.tx_blob)
-
-      log("Resultado: " + result.result.meta.TransactionResult)
-      log("Hash: " + result.result.tx_json.hash)
-
-      client.disconnect()
+    const log = (msg) => {
+      const logBox = document.getElementById("log")
+      logBox.textContent += msg + "\n"
+      logBox.scrollTop = logBox.scrollHeight
     }
+
+    const NODE = "wss://testnet.xrpl-labs.com"
+    const DESTINO = "rPT1Sjq2YGrBMTttX4GZHjKu9dyfzbpAYe"
+
+    async function enviarXRP() {
+      log("Conectando al nodo Testnet...")
+
+      const client = new xrpl.Client(NODE)
+
+      try {
+        await client.connect()
+        log("Conectado correctamente")
+
+        const { wallet } = await client.fundWallet()
+        log("Cuenta origen: " + wallet.address)
+        log("Cuenta destino: " + DESTINO)
+
+        const tx = {
+          TransactionType: "Payment",
+          Account: wallet.address,
+          Amount: xrpl.xrpToDrops("1"),
+          Destination: DESTINO
+        }
+
+        log("Preparando transacción...")
+        const prepared = await client.autofill(tx)
+
+        log("Firmando...")
+        const signed = wallet.sign(prepared)
+
+        log("Enviando al ledger...")
+        const result = await client.submitAndWait(signed.tx_blob)
+
+        const meta = result.result.meta
+        const tx_json = result.result.tx_json
+
+        log("Resultado: " + meta.TransactionResult)
+        log("Hash: " + tx_json.hash)
+        log("Destino confirmado: " + tx_json.Destination)
+        log("Monto enviado (drops): " + tx_json.Amount)
+
+        // 🔥 ENLACE DIRECTO AL EXPLORER
+        const explorerUrl = `https://testnet.xrpl.org/transactions/${tx_json.hash}`
+        log("Ver en Explorer: " + explorerUrl)
+
+        // Mostrar enlace clicable
+        const link = document.createElement("a")
+        link.href = explorerUrl
+        link.target = "_blank"
+        link.textContent = "Abrir transacción en XRPL Testnet Explorer"
+        document.body.appendChild(link)
+
+      } catch (error) {
+        log("ERROR: " + error.message)
+      } finally {
+        client.disconnect()
+        log("Desconectado del nodo")
+      }
+    }
+
+    document.getElementById("btnEnviar").onclick = enviarXRP
   </script>
+
 </body>
 </html>
