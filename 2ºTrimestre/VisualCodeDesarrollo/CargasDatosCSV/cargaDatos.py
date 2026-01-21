@@ -24,7 +24,6 @@ unidades = dp.BigNumber(
     is_upward_change=unidades_diciembre > unidades_noviembre
 )
 
-
 report = dp.Report(unidades)
 report.save(path='DI_U05_A02_05.html', open=True)
 
